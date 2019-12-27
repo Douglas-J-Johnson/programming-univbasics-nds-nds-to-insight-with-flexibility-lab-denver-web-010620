@@ -90,6 +90,8 @@ def gross_per_studio(collection)
       studios_totals[studio_name] = movie_gross
     end
   end
+
+  return studios_totals
 end
 
 def movies_with_directors_set(source)
