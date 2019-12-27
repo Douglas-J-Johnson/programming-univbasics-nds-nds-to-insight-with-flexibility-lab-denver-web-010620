@@ -63,6 +63,9 @@ end
 
 def gross_per_studio(collection)
   studios_totals = {}
+  studio_name = ""
+  movie_gross = 0
+  movie = {}
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
   # return a Hash that includes the total worldwide_gross of all the movies from
   # each studio.
@@ -77,7 +80,15 @@ def gross_per_studio(collection)
   pp collection
 
   for i in 0...collection.length
+    movie = collection[i]
+    studio_name = collection[i][:studio]
+    movie_gross = collection[i][:worldwide_gross]
 
+    if studios_totals[studio_name] then
+      studios_totals[studio_name] = studios_totals[studio_name] + movie_gross
+    else
+      studios_totals[studio_name] = movie_gross
+    end
   end
 end
 
