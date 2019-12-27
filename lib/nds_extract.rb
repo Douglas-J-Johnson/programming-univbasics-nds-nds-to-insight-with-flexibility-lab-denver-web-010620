@@ -111,7 +111,7 @@ def movies_with_directors_set(source)
   for i in 0...source.length
     director_name = source[i][:name]
     director_movies = source[i][:movies]
-    movies_with_directors[i] = movies_with_director_key(director_name, director_movies)
+    pp movies_with_director_key(director_name, director_movies)
   end
 
   return movies_with_directors
