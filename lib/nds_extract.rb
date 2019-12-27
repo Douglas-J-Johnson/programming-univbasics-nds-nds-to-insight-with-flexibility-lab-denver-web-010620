@@ -50,11 +50,10 @@ def movies_with_director_key(name, movies_collection)
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
-  director_name = source[:name]
   movies_with_directors_name = []
 
-  for i in 0...source.length
-    movies_with_directors_name.push(movie_with_director_name(director_name, source[:movies][i]))
+  for i in 0...movies_collection.length
+    movies_with_directors_name.push(movie_with_director_name(name, movies_collection[i]))
   end
 
   return movies_with_directors_name
