@@ -5,6 +5,7 @@ require 'directors_database'
 # [3,4,5], [6]] => [1,2,3,4,5,6].
 
 def flatten_a_o_a(aoa)
+  #Take array aoa and returns array result
   result = []
   i = 0
 
@@ -21,7 +22,8 @@ def flatten_a_o_a(aoa)
 end
 
 def movie_with_director_name(director_name, movie_data)
-  { 
+  #
+  {
     :title => movie_data[:title],
     :worldwide_gross => movie_data[:worldwide_gross],
     :release_year => movie_data[:release_year],
@@ -52,6 +54,7 @@ end
 
 
 def gross_per_studio(collection)
+  studios_totals = {}
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
   # return a Hash that includes the total worldwide_gross of all the movies from
   # each studio.
@@ -63,6 +66,9 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
+  for i in 0...collection.length
+
+  end
 end
 
 def movies_with_directors_set(source)
@@ -76,6 +82,14 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+  director_name = source[:name]
+  movies_with_directors_name = []
+
+  for i in 0...source.length
+    movies_with_directors_name.push(movie_with_director_name(director_name, source[:movies][i]))
+  end
+
+  return movies_with_directors_name
 end
 
 # ----------------    End of Your Code Region --------------------
